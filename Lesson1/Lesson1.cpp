@@ -2,10 +2,49 @@
 //
 
 #include <iostream>
+#include <string>
+#include <math.h>
+#include "Exercises.h"
+
+using namespace std;
+//  0	1	2	3	4	5	6	7	8	9
+// x1, y1, x2, y2, x3, y3, x4, y4, x5, y5
+
+double ControlTask(int arr[])
+{
+	double square = ((arr[0] * arr[3]) 
+		+ (arr[2] * arr[5])
+		+ (arr[4] * arr[7])
+		+ (arr[6] * arr[9])
+		+ (arr[8] * arr[1])
+		- (arr[2] * arr[1])
+		- (arr[4] * arr[3])
+		- (arr[6] * arr[5])
+		- (arr[8] * arr[7])
+		- (arr[0] * arr[9])) / 2;
+
+	return abs(square);
+}
 
 int main()
 {
-    std::cout << "Hello World!\n";
+	cout << "Enter coordinates of pentagon\n";
+	
+	int arr[10];
+	int size = sizeof(arr) / sizeof(arr[0]);
+	
+	for (int i = 0; i < size; i++)
+	{
+		cin >> arr[i];
+	}
+
+	double square = ControlTask(arr);
+
+	cout << "Pentagon square: " << square << endl;
+
+	//ExerciseOne();
+	//ExerciseTwo();
+	//ExerciseThree();
 }
 
 // Run program: Ctrl + F5 or Debug > Start Without Debugging menu
