@@ -151,11 +151,11 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
-    <ClCompile Include="Exercises.cpp" />
+    <ClCompile Include="Exercises1.cpp" />
     <ClCompile Include="Lesson1.cpp" />
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="Exercises.h" />
+    <ClInclude Include="Exercises1.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">
