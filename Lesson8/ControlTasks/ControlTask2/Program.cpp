@@ -47,22 +47,6 @@ public:
 	friend ostream &operator << (ostream &out, Point &point);
 };
 
-void sort(Point point1, Point point2)
-{
-	Point temp;
-
-	if (point1 < point2)
-	{
-		return;
-	}
-	else
-	{
-		temp = point1;
-		point1 = point2;
-		point2 = temp;
-	}
-}
-
 ostream &operator << (ostream &out, Point &point)
 {
 	out << "x = " << point.x << "\ny = " << point.y;
