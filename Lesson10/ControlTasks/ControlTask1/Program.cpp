@@ -33,7 +33,45 @@ public:
 
 };
 
-class Triangle
+class Triangle // Aggregation
+{
+private:
+	Dot* dot1;
+	Dot* dot2;
+	Dot* dot3;
+
+	double arr[3];
+
+public:
+
+	Triangle(Dot* _dot1, Dot* _dot2, Dot* _dot3) // Aggregation
+	{
+		dot1 = _dot1;
+		dot2 = _dot2;
+		dot3 = _dot3;
+	}
+
+	double* sidesLength()
+	{
+		arr[0] = dot1->distanceTo(*dot2);
+		arr[1] = dot1->distanceTo(*dot3);
+		arr[2] = dot2->distanceTo(*dot3);
+
+		return arr;
+	}
+
+	double perimeter()
+	{
+		return arr[0] + arr[1] + arr[2];
+	}
+
+	double area()
+	{
+		return sqrt(perimeter() * (perimeter() - arr[0]) * (perimeter() - arr[1]) * (perimeter() - arr[2]));
+	}
+};
+
+class Triangle // Composition
 {
 private:
 	Dot dot1;
@@ -48,13 +86,6 @@ public:
 		dot1 = Dot(arr[0], arr[1]);
 		dot2 = Dot(arr[2], arr[3]);
 		dot3 = Dot(arr[4], arr[5]);
-	}
-
-	Triangle(Dot _dot1, Dot _dot2, Dot _dot3) // Aggregation
-	{
-		dot1 = _dot1;
-		dot2 = _dot2;
-		dot3 = _dot3;
 	}
 
 	double* sidesLength()
